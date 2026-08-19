@@ -137,3 +137,23 @@ h1,h2,h3{font-family:Manrope,sans-serif}h1{font-size:clamp(50px,6.5vw,82px);line
  .services-v2 .service-visual{right:50%;transform:translateX(50%);bottom:18px;opacity:.82}
 }
 @media(max-width:420px){.services-v2 .service-visual{transform:translateX(50%) scale(.86);transform-origin:center bottom}.services-v2 .service-detail{padding-bottom:205px}}
+
+
+/* SERVICES V3.1 — critical live-page fixes */
+.services-v2 .mobile-service-nav{display:none !important}
+.services-v2 .service-detail{position:relative;overflow:hidden}
+.services-v2 .service-detail .service-visual{position:absolute;right:28px;bottom:26px;width:210px;height:160px;z-index:1;opacity:.92;pointer-events:none}
+.services-v2 .service-detail .service-visual .sv-node{position:absolute;width:36px;height:36px;border-radius:12px;border:1px solid rgba(170,220,255,.28);background:rgba(255,255,255,.06);display:grid;place-items:center;color:#9fdcff;font:800 9px Manrope;box-shadow:0 12px 30px rgba(0,0,0,.12)}
+.services-v2 .service-detail .service-visual .sv-line{position:absolute;background:rgba(150,218,255,.42);height:1px;transform-origin:left center}
+.services-v2 .service-detail .service-visual .sv-dot{position:absolute;width:9px;height:9px;border-radius:50%;background:#55dcff;box-shadow:0 0 0 6px rgba(85,220,255,.08),0 0 22px rgba(85,220,255,.7)}
+.services-v2 .service-detail .service-visual.consulting .sv-node:nth-child(1){left:15px;top:22px}
+.services-v2 .service-detail .service-visual.consulting .sv-node:nth-child(2){right:12px;top:45px}
+.services-v2 .service-detail .service-visual.consulting .sv-node:nth-child(3){left:78px;bottom:10px}
+.services-v2 .service-detail .service-visual.consulting .sv-line:nth-child(4){left:48px;top:40px;width:110px;transform:rotate(9deg)}
+.services-v2 .service-detail .service-visual.consulting .sv-line:nth-child(5){left:96px;top:57px;width:72px;transform:rotate(53deg)}
+@media(max-width:700px){
+ .services-v2 .mobile-service-nav{display:flex !important;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;margin-bottom:8px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+ .services-v2 .mobile-service-nav::-webkit-scrollbar{display:none}
+ .services-v2 .service-menu{display:none}
+ .services-v2 .service-detail .service-visual{right:50%;bottom:18px;transform:translateX(50%);opacity:.82}
+}

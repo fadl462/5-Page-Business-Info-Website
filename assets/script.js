@@ -72,3 +72,12 @@ if(tabs.length){
  tabs.forEach((b,i)=>b.addEventListener('click',()=>setService(i)));
  chips.forEach((b,i)=>b.addEventListener('click',()=>{setService(i);document.querySelector('.services-v2 .service-detail')?.scrollIntoView({behavior:'smooth',block:'center'})}));
 }
+
+/* FAQ V2 — filtering + animated answers */
+const faqItems=[...document.querySelectorAll('.faq-v2 .faq-item')];
+if(faqItems.length){
+ const closeOthers=item=>faqItems.forEach(x=>{if(x!==item){x.classList.remove('is-open');x.querySelector('.faq-question')?.setAttribute('aria-expanded','false')}});
+ faqItems.forEach(item=>{const q=item.querySelector('.faq-question');q?.addEventListener('click',()=>{const open=item.classList.contains('is-open');closeOthers(item);item.classList.toggle('is-open',!open);q.setAttribute('aria-expanded',String(!open))})});
+ const filters=document.querySelectorAll('.faq-v2 .faq-filter');const empty=document.getElementById('faqEmpty');
+ filters.forEach(filter=>filter.addEventListener('click',()=>{const cat=filter.dataset.filter;filters.forEach(f=>f.classList.toggle('active',f===filter));let shown=0;faqItems.forEach(item=>{const match=cat==='all'||item.dataset.category===cat;item.classList.toggle('is-filtered',!match);if(match)shown++});if(empty)empty.style.display=shown?'none':'block';if(shown&&window.innerWidth<851)document.getElementById('faqList')?.scrollIntoView({behavior:'smooth',block:'start'})}));
+}

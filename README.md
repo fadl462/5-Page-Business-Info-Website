@@ -21,3 +21,9 @@ Replace the placeholder email, phone, service area and generic service copy with
 
 ## Services page
 The Services page is now an interactive service studio with six selectable services, detailed service information, engagement models and a premium conversion CTA.
+
+
+## Latest update
+- Premium Contact page v2
+- Global header Contact Us CTA contrast/hover fix
+- Premium footer v2 across all pages

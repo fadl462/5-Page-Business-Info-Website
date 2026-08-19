@@ -157,3 +157,63 @@ h1,h2,h3{font-family:Manrope,sans-serif}h1{font-size:clamp(50px,6.5vw,82px);line
  .services-v2 .service-menu{display:none}
  .services-v2 .service-detail .service-visual{right:50%;bottom:18px;transform:translateX(50%);opacity:.82}
 }
+
+
+/* SERVICES V3.2 — REPOSITION SERVICE VISUAL */
+.services-v2 .service-visual{
+  right:36px;
+  top:34px;
+  bottom:auto;
+  width:215px;
+  height:165px;
+  opacity:.88;
+  transform:scale(.96);
+  transform-origin:top right;
+}
+.services-v2 .service-detail .detail-inner{
+  padding-right:185px;
+}
+.services-v2 .service-detail .detail-top,
+.services-v2 .service-detail h2,
+.services-v2 .service-detail .detail-lead{
+  position:relative;
+  z-index:3;
+}
+.services-v2 .service-detail .detail-columns,
+.services-v2 .service-detail .actions{
+  position:relative;
+  z-index:3;
+}
+.services-v2 .service-visual .sv-node{
+  background:rgba(255,255,255,.075);
+  border-color:rgba(170,220,255,.32);
+  box-shadow:0 0 22px rgba(85,220,255,.10);
+}
+.services-v2 .service-visual .sv-dot{
+  box-shadow:0 0 0 6px rgba(85,220,255,.08),0 0 25px rgba(85,220,255,.65);
+}
+.services-v2 .service-visual .sv-line{
+  background:rgba(150,218,255,.48);
+}
+@media(max-width:900px){
+  .services-v2 .service-visual{
+    right:22px;
+    top:28px;
+    width:190px;
+    height:145px;
+    transform:scale(.88);
+  }
+  .services-v2 .service-detail .detail-inner{
+    padding-right:0;
+  }
+}
+@media(max-width:700px){
+  .services-v2 .service-visual{
+    right:50%;
+    top:auto;
+    bottom:18px;
+    width:210px;
+    height:160px;
+    transform:translateX(50%) scale(.88);
+  }
+}

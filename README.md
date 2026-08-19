@@ -1,25 +1,19 @@
-# Your Business — Brochure Website
+# Glen & Co. — Interactive 5-Page Business Website
 
-## Pages
-- Home
-- About Us
-- Services
-- FAQ
-- Contact Us
+Pages: Home, About Us, Services, FAQ, Contact Us.
 
-## Quick customisation
-1. Replace `YOURBUSINESS` in the HTML files with the real business name.
-2. Replace `hello@yourbusiness.com`, phone number and location.
-3. In `contact.html`, replace the FormSubmit endpoint email with the real receiving email.
-4. Replace placeholder service copy with the business's actual offerings.
-5. Upload the complete folder to GitHub Pages, Netlify, Vercel or another static host.
+### Highlights
+- Responsive US-focused design
+- Sticky glass navigation with mobile menu
+- Animated hero panel with pointer tilt
+- Scroll reveal animations
+- Hover interactions and elevated cards
+- Animated visual accents and cursor glow
+- Process section and richer conversion CTA
+- FAQ accordion
+- Contact form ready for FormSubmit
+- SEO metadata on every page
+- No framework/build step; lightweight HTML/CSS/JS
 
-## Contact form
-The contact form uses FormSubmit so it can work on static hosting. The receiving email must be activated the first time FormSubmit requests verification.
-
-## SEO
-Each page includes a unique title, meta description, robots directive and Open Graph metadata. Add real business/service keywords and a favicon before launch for best results.
-
-
-## US version
-The current placeholder build is configured for a US-based business. Replace the generic business name, city/state, phone, email, and service copy with the client's actual information before launch.
+### Before launch
+Replace the placeholder email, phone, service area and any generic service copy with the client's actual information. For the contact form, update the FormSubmit endpoint in `contact.html`.

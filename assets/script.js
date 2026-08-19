@@ -15,3 +15,9 @@ panel.addEventListener('pointerleave',()=>panel.style.transform='');
 const topBtn=document.querySelector('.top-btn');
 window.addEventListener('scroll',()=>{if(topBtn)topBtn.classList.toggle('show',scrollY>600)});
 if(topBtn)topBtn.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+
+const orbital=document.querySelector('.home-v2 .orbital');
+if(orbital&&matchMedia('(pointer:fine)').matches){
+ orbital.addEventListener('pointermove',e=>{const r=orbital.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;orbital.style.transform=`perspective(1200px) rotateY(${x*4}deg) rotateX(${-y*4}deg)`});
+ orbital.addEventListener('pointerleave',()=>orbital.style.transform='');
+}

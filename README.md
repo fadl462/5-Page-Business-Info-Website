@@ -1,19 +1,17 @@
 # Glen & Co. — Premium Interactive 5-Page Business Website
 
-Pages: Home, About Us, Services, FAQ, Contact Us.
+The Home page is now a premium interactive showcase. Versioned `glen-v3.css` and `glen-v3.js` assets are used on the Home page to prevent GitHub Pages/browser caching from keeping the previous visual system.
 
-## Visual upgrade
-This version intentionally moves away from the earlier sparse/dull presentation. It uses:
-- layered gradients and luminous accents
-- richer hero composition with floating status cards
-- animated cursor glow
-- interactive 3D hero panel
-- stronger cards, shadows and hover states
-- dark premium CTA sections
-- a trust/standards strip
-- animated scroll reveals
-- improved process cards
-- mobile-first responsive behavior
+Home features:
+- editorial hero typography
+- animated operating-philosophy orbital visual
+- mouse-responsive 3D interaction
+- floating metric cards
+- animated values marquee
+- premium service cards
+- richer Glen & Co. difference section
+- four-step process cards
+- high-impact CTA
+- responsive tablet/mobile behavior
 
-## Before launch
-Replace the placeholder email, phone, service area and generic service copy with Glen & Co.'s real information. Update the FormSubmit endpoint in `contact.html` to the actual receiving email.
+Upload the complete contents and replace the previous repository files.

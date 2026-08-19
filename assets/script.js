@@ -73,11 +73,41 @@ if(tabs.length){
  chips.forEach((b,i)=>b.addEventListener('click',()=>{setService(i);document.querySelector('.services-v2 .service-detail')?.scrollIntoView({behavior:'smooth',block:'center'})}));
 }
 
-/* FAQ V2 — filtering + animated answers */
-const faqItems=[...document.querySelectorAll('.faq-v2 .faq-item')];
-if(faqItems.length){
- const closeOthers=item=>faqItems.forEach(x=>{if(x!==item){x.classList.remove('is-open');x.querySelector('.faq-question')?.setAttribute('aria-expanded','false')}});
- faqItems.forEach(item=>{const q=item.querySelector('.faq-question');q?.addEventListener('click',()=>{const open=item.classList.contains('is-open');closeOthers(item);item.classList.toggle('is-open',!open);q.setAttribute('aria-expanded',String(!open))})});
- const filters=document.querySelectorAll('.faq-v2 .faq-filter');const empty=document.getElementById('faqEmpty');
- filters.forEach(filter=>filter.addEventListener('click',()=>{const cat=filter.dataset.filter;filters.forEach(f=>f.classList.toggle('active',f===filter));let shown=0;faqItems.forEach(item=>{const match=cat==='all'||item.dataset.category===cat;item.classList.toggle('is-filtered',!match);if(match)shown++});if(empty)empty.style.display=shown?'none':'block';if(shown&&window.innerWidth<851)document.getElementById('faqList')?.scrollIntoView({behavior:'smooth',block:'start'})}));
-}
+/* FAQ V3 — robust accordion + filtering for the current FAQ cards */
+(function(){
+  const faqItems=[...document.querySelectorAll('.faq-v2 .faq-card, .faq-v2 .faq-item')];
+  const filters=[...document.querySelectorAll('.faq-v2 .faq-filter')];
+  const empty=document.getElementById('faqEmpty');
+  if(!faqItems.length) return;
+
+  const setOpen=(item,open)=>{
+    item.classList.toggle('is-open',open);
+    const q=item.querySelector('.faq-question');
+    if(q) q.setAttribute('aria-expanded',String(open));
+  };
+
+  faqItems.forEach(item=>{
+    const q=item.querySelector('.faq-question');
+    if(!q) return;
+    q.addEventListener('click',()=>{
+      const willOpen=!item.classList.contains('is-open');
+      faqItems.forEach(other=>{if(other!==item)setOpen(other,false)});
+      setOpen(item,willOpen);
+    });
+  });
+
+  filters.forEach(filter=>filter.addEventListener('click',()=>{
+    const category=filter.dataset.filter || 'all';
+    filters.forEach(f=>f.classList.toggle('active',f===filter));
+    let shown=0;
+    faqItems.forEach(item=>{
+      const match=category==='all' || item.dataset.category===category;
+      item.classList.toggle('is-hidden',!match);
+      item.classList.toggle('is-filtered',!match);
+      if(!match) setOpen(item,false);
+      if(match) shown++;
+    });
+    if(empty) empty.style.display=shown ? 'none' : 'block';
+    if(shown && window.innerWidth<851) document.getElementById('faqList')?.scrollIntoView({behavior:'smooth',block:'start'});
+  }));
+})();

@@ -21,3 +21,9 @@ if(orbital&&matchMedia('(pointer:fine)').matches){
  orbital.addEventListener('pointermove',e=>{const r=orbital.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;orbital.style.transform=`perspective(1200px) rotateY(${x*4}deg) rotateX(${-y*4}deg)`});
  orbital.addEventListener('pointerleave',()=>orbital.style.transform='');
 }
+
+const storyCore=document.querySelector('.about-v2 .story-core');
+if(storyCore&&matchMedia('(pointer:fine)').matches){
+ storyCore.addEventListener('pointermove',e=>{const r=storyCore.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;storyCore.style.transform=`perspective(1200px) rotateY(${x*5}deg) rotateX(${-y*5}deg)`});
+ storyCore.addEventListener('pointerleave',()=>storyCore.style.transform='');
+}
